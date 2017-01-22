@@ -1,5 +1,12 @@
 var lib = {};
 
+lib.loadInitState = function(){
+  var initComics = init_state.comics;
+  var initEmployees = init_state.employees;
+  localStorage.setItem("comics", JSON.stringify(initComics));
+  localStorage.setItem("employees", JSON.stringify(initEmployees));
+};
+
 lib.showMenu = function(username){
   var menuTemplate = '<div id="menu"><ul><li class="menuitem">username <a href="#logout">(salir)</a></li><li class="menuitem"><a href="#listAll">Listar comics</a></li><li class="menuitem"><a href="#addUser">Crear Usuario</a></li><li class="menuitem"><a href="#addComic">Crear comic</a></li></ul></div>';
 
@@ -7,21 +14,41 @@ lib.showMenu = function(username){
   $( content ).insertBefore( $('#maincontent') );
 };
 
-lib.showLoginForm = function(){
-  var formTemplate = '<div id="loginform"><form><div class="form-input"><input name="username" type="text" placeholder="email"></div><div class="form-input"><input name="password" type="password" placeholder="constraseña"></div><input type="submit" value="Login"></form></div>';
+lib.showSearchBar = function(){
+  var searchTemplate = '<div id="searchbar"><input type="text" placeholder="Buscar..."></div>'
 
-  $('#maincontent').append(formTemplate);
+  $('#maincontent').prepend(searchTemplate);
 };
 
 lib.showComics = function(comicsArr){
   var comicTemplate = '<div class="comic"><div class="cover"><img src="imgurl" alt="comic cover"></div><div class="name">comicname</div><div class="year">comicyear</div><div class="moreinfo">more...</div></div>';
-
   comicsArr.forEach(function(comic){
     var content = comicTemplate.replace('imgurl',comic.imgurl);
     content = content.replace('comicname', comic.name);
     content = content.replace('comicyear', comic.year);
     $('#maincontent').append(content);
   })
+};
+
+lib.showSearchResult = function(inputVal){
+  var searchFields = ["name","house","year"];
+  var regex = new RegExp(inputVal, "i");
+  var comicsToShow = $.grep(lib.listedComics, function(obj){
+    var i = 0;
+    while (i < searchFields.length) {
+      if (obj[searchFields[i]].search(regex) >= 0 ){
+        return obj;
+      }
+      i++;
+    }
+  });
+  this.showComics(comicsToShow);
+};
+
+lib.showLoginForm = function(){
+  var formTemplate = '<div id="loginform"><form><div class="form-input"><input name="username" type="text" placeholder="email"></div><div class="form-input"><input name="password" type="password" placeholder="constraseña"></div><input type="submit" value="Login"></form></div>';
+
+  $('#maincontent').append(formTemplate);
 };
 
 lib.showNewUserForm = function(){

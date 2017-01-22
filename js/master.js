@@ -1,15 +1,12 @@
 $( document ).ready(function() {
 
 
-  if (localStorage.getItem("comics")) {
-    lib.comics = JSON.parse(localStorage.getItem('comics'));
-    lib.employees = JSON.parse(localStorage.getItem('employees'));
-  } else {
-    lib.comics = init_state.comics;
-    lib.employees = init_state.employees;
-    localStorage.setItem("comics", JSON.stringify(lib.comics));
-    localStorage.setItem("employees", JSON.stringify(lib.employees));
+  if (!localStorage.getItem("comics")) {
+    lib.loadInitState();
   }
+
+  lib.comics = JSON.parse(localStorage.getItem('comics'));
+  lib.employees = JSON.parse(localStorage.getItem('employees'));
 
   if(localStorage.currentUser){
     var user = lib.validateUser(localStorage.currentUser);
@@ -23,20 +20,30 @@ $( document ).ready(function() {
 
     switch (requestedview) {
       case '#listAll':
+        lib.listedComics = [];
         lib.showMenu(user.firstname + ' ' + user.lastname);
+        lib.showSearchBar();
         $( '<button type="button" name="button">Cargar comics</button>' ).insertAfter($( '#maincontent') );
         var currentComic = 3;
         var loadPase = 2;
         var comicsToShow = lib.comics.slice(0,currentComic);
+        lib.listedComics = comicsToShow;
         lib.showComics(comicsToShow);
 
         $('button').click(function(){
           sliceTop = currentComic + loadPase >= lib.comics.length ? undefined : currentComic + loadPase;
-          lib.showComics(lib.comics.slice(currentComic, sliceTop));
+          comicsToShow = lib.comics.slice(currentComic, sliceTop);
+          lib.listedComics = lib.listedComics.concat(comicsToShow);
+          lib.showComics(comicsToShow);
           currentComic = sliceTop;
           if (!sliceTop){
             $( this ).remove();
           }
+        });
+
+        $('#searchbar input').keyup(function(){
+          $('#maincontent .comic').remove();
+          lib.showSearchResult($(this).val());
         });
         break;
 

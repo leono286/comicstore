@@ -4,7 +4,7 @@ var init_state = {
         id:1,
         name:"Absolute Batman: Haunted Knight",
         house:"DC Comics",
-        year:2014,
+        year:"2014",
         imgurl:"http://www.comicbookdb.com/graphics/comic_graphics/1/668/320982_20141204200253_large.jpg",
         description:'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
         comments:[
@@ -26,7 +26,7 @@ var init_state = {
         id:2,
         name:"Captain America Comics #1",
         house:"Marvel Comics",
-        year:1941,
+        year:"1941",
         imgurl:"http://www.comicbookdb.com/graphics/comic_graphics/1/8/6945_20051106132504_large.jpg",
         description:'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
         comments:[
@@ -48,7 +48,7 @@ var init_state = {
         id:3,
         name:"The Flash #226 - Down Time",
         house:"DC Comics",
-        year:2005,
+        year:"2005",
         imgurl:"http://www.comicbookdb.com/graphics/comic_graphics/1/22/3337_20051202212504_large.jpg",
         description:'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
         comments:[
@@ -70,7 +70,7 @@ var init_state = {
         id:4,
         name:"Superman #50 - What Could Have Been, What Can Still Be, and What Is",
         house:"DC Comics",
-        year:2016,
+        year:"2016",
         imgurl:"http://www.comicbookdb.com/graphics/comic_graphics/1/761/358054_20160319180704_large.jpg",
         description:'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
       },
@@ -78,7 +78,7 @@ var init_state = {
         id:5,
         name:"Captain America Comics #2",
         house:"Marvel Comics",
-        year:1941,
+        year:"1941",
         imgurl:"http://www.comicbookdb.com/graphics/comic_graphics/1/35/21691_20051229141126_large.jpg",
         description:'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
         comments:[
@@ -100,7 +100,7 @@ var init_state = {
         id:6,
         name:"Avengers: The Final Threat",
         house:"Marvel Comics",
-        year:2013,
+        year:"2013",
         imgurl:"http://www.comicbookdb.com/graphics/comic_graphics/1/601/291023_20131212034212_large.jpg",
         description:'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
         comments:[
