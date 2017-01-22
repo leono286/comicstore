@@ -23,7 +23,7 @@ $( document ).ready(function() {
         lib.listedComics = [];
         lib.showMenu(user.firstname + ' ' + user.lastname);
         lib.showSearchBar();
-        $( '<button type="button" name="button">Cargar comics</button>' ).insertAfter($( '#maincontent') );
+        $( '<button type="button" name="button">Mostrar más</button>' ).insertAfter($( '#maincontent') );
         var currentComic = 3;
         var loadPase = 2;
         var comicsToShow = lib.comics.slice(0,currentComic);
@@ -31,6 +31,10 @@ $( document ).ready(function() {
         lib.showComics(comicsToShow);
 
         $('button').click(function(){
+          if ($('#searchbar input').val().length > 0) {
+            $('#searchbar input').val("");
+            $('#searchbar input').keyup();
+          }
           sliceTop = currentComic + loadPase >= lib.comics.length ? undefined : currentComic + loadPase;
           comicsToShow = lib.comics.slice(currentComic, sliceTop);
           lib.listedComics = lib.listedComics.concat(comicsToShow);
