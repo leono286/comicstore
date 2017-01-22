@@ -1,0 +1,21 @@
+#maincontent .comic {
+  width: 30%;
+  max-width: 300px;
+  display: inline-block;
+  vertical-align: top;
+  padding: 10px;
+  box-sizing: border-box;
+}
+#maincontent .comic .cover img{
+  width: 100%;
+}
+
+
+div#maincontent {
+    width: 80%;
+}
+
+
+div#menu {
+    float: right;
+}
