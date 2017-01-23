@@ -86,7 +86,7 @@ lib.showSearchResult = function(inputVal){
 
 // load and shoe the login form when no user is logged in
 lib.showLoginForm = function(){
-  var formTemplate = '<div id="loginform"><div id="store-logo"><img src="http://cdn2.comicsetc.com.au/skin/frontend/default/comics/images/logo-white-transparent-rotated.png" alt="comic-store-logo"/></div><form><div class="form-input"><input name="username" type="email" placeholder="email" required></div><div class="form-input"><input name="password" type="password" placeholder="constraseña" required></div><div class="form-controls"><input type="submit" value="Login"></div></form></div>';
+  var formTemplate = '<div id="loginform"><div id="store-logo"><img src="http://cdn2.comicsetc.com.au/skin/frontend/default/comics/images/logo-white-transparent-rotated.png" alt="comic-store-logo"/></div><form><div class="form-input"><input name="username" type="email" placeholder="email" required></div><div class="form-input"><input name="password" type="password" placeholder="constraseña" required><div class="loginmessage"></div></div><div class="form-controls"><input type="submit" value="Login"></div></form></div>';
 
   $('#maincontent').append(formTemplate);
   $('body, #maincontent').addClass('login');

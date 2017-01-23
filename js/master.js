@@ -144,11 +144,16 @@ $( document ).ready(function() {
     lib.showLoginForm();
     $( '#loginform' ).submit(function(event){
       event.preventDefault();
+      if($(this).find('.loginmessage').html().length > 0){
+        $(this).find('.loginmessage').html('');
+      }
       var user = lib.validateUser($(this).find('input[name=username]').val());
       if (user && user.password == $(this).find('input[name=password]').val()){
         localStorage.setItem("currentUser", user.email);
         window.location.href += '#listAll';
         window.location.reload();
+      } else {
+        $(this).find('.loginmessage').append('El usuario o la contraseña son incorrectos.');
       }
     });
   };
