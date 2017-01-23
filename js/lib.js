@@ -101,7 +101,7 @@ lib.showNewUserForm = function(){
 
 // load and show the form to add a new comic
 lib.showNewComicForm = function(){
-  var formTemplate = '<div id="newcomicform"><form><div class="form-input"><input name="comicname" type="text" placeholder="nombre"  required/></div><div class="form-input"><input name="comichouse" type="text" placeholder="publicador"  required/></div><div class="form-input"><input name="comicyear" type="text" placeholder="año"  required/></div><div class="form-input"><input name="comiccoverimg" type="url" placeholder="cover url"  required/></div><div class="form-input"><textarea name="comicdescription"  placeholder="descripción" required></textarea></div><div class="form-controls"><input type="button" value="Cancelar" /><input type="submit" value="Crear"></div></form></div>';
+  var formTemplate = '<div id="newcomicform"><form><div class="form-input"><input name="comicname" type="text" placeholder="nombre"  required/></div><div class="form-input"><input name="comichouse" type="text" placeholder="publicador"  required/></div><div class="form-input"><input name="comicyear" type="number" min=1900 max=2017 placeholder="año" required/></div><div class="form-input"><input name="comiccoverimg" type="url" placeholder="cover url"  required/></div><div class="form-input"><textarea name="comicdescription"  placeholder="descripción" required></textarea></div><div class="form-controls"><input type="button" value="Cancelar" /><input type="submit" value="Crear"></div></form></div>';
 
   $('#maincontent').append(formTemplate);
 };
