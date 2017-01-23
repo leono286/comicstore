@@ -109,8 +109,15 @@ lib.validateHash = function(hash){
 };
 
 lib.addUser = function(newUser){
+  var currentLength = this.employees.length;
   var newEmployeesLength = this.employees.push(newUser);
-  localStorage.setItem("employees", JSON.stringify(this.employees));
+  var success = false;
+  if (newEmployeesLength > currentLength){
+    localStorage.setItem("employees", JSON.stringify(this.employees));
+    var success = true;
+    return success;
+  }
+  return success;
 };
 
 lib.addComic = function(newComic){

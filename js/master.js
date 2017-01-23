@@ -19,13 +19,14 @@ $( document ).ready(function() {
     lib.validateHash(requestedview);
 
     switch (true) {
+
       case /^#listAll$/.test(requestedview):
         lib.listedComics = [];
         lib.showMenu(user.firstname + ' ' + user.lastname);
         lib.showSearchBar();
         $( '<button id="loadmore" type="button" name="button">Mostrar más</button>' ).insertAfter($( '#maincontent') );
-        var currentComic = 3;
-        var loadPase = 2;
+        var currentComic = 9;
+        var loadPase = 6;
         var comicsToShow = lib.comics.slice(0,currentComic);
         lib.listedComics = comicsToShow;
         lib.showComics(comicsToShow);
@@ -72,7 +73,10 @@ $( document ).ready(function() {
           newUser.lastname = $( this ).find('input[name=userlastname]').val();
           newUser.email = $( this ).find('input[name=email]').val();
           newUser.password = $( this ).find('input[name=password]').val();
-          lib.addUser(newUser);
+          var successUser =  lib.addUser(newUser);
+          if (successUser){
+            $(this).replaceWith('<div class="messagealert"><p>El usuario ha sido creado exitosamente.</p></div>');
+          }
         });
         break;
 
@@ -95,7 +99,7 @@ $( document ).ready(function() {
           var success = lib.addComic(newComic);
           if (success){
             window.location.hash = '#showComic'+ nextId.toString();
-          }          
+          }
         });
         break;
 
