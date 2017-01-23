@@ -7,6 +7,7 @@
 body{
   font-family: 'Roboto', sans-serif;
   padding-bottom: 20px;
+  background-color: #1976D2;
 }
 div#maincontent {
   width: 80%;
@@ -97,6 +98,7 @@ form .form-controls input[type=submit]{
   }
 }
 
+
 /*******************************/
 /*******************************/
 /***** Login Page styles *******/
@@ -153,6 +155,17 @@ div#maincontent.login form .form-controls input:hover {
   color: #1E88E5;
   transition: all .3s;
   opacity: 1;
+}
+@media (max-width: 767px) {
+  div#maincontent.login {
+      width: 100%;
+      position: relative;
+      top: auto;
+      left: auto;
+      bottom: auto;
+      right: auto;
+      background-color: #1976D2;
+  }
 }
 
 /*******************************/
