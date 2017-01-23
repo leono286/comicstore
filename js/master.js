@@ -92,7 +92,10 @@ $( document ).ready(function() {
           newComic.year = $( this ).find('input[name=comicyear]').val();
           newComic.imgurl = $( this ).find('input[name=comiccoverimg]').val();
           newComic.description = $( this ).find('textarea').val();
-          lib.addComic(newComic);
+          var success = lib.addComic(newComic);
+          if (success){
+            window.location.hash = '#showComic'+ nextId.toString();
+          }          
         });
         break;
 

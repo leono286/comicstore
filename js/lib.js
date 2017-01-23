@@ -114,6 +114,13 @@ lib.addUser = function(newUser){
 };
 
 lib.addComic = function(newComic){
+  var currentLength = this.comics.length;
   var newComicsLength = this.comics.unshift(newComic);
-  localStorage.setItem("comics", JSON.stringify(this.comics));
+  var success = false;
+  if (newComicsLength > currentLength){
+    localStorage.setItem("comics", JSON.stringify(this.comics));
+    var success = true;
+    return success;
+  }
+  return success;
 };
