@@ -1,3 +1,201 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+/*******************************/
+/*******************************/
+/****** CrossApp styles ********/
+/*******************************/
+/*******************************/
+body{
+  font-family: 'Roboto', sans-serif;
+}
+div#maincontent {
+  width: 80%;
+}
+button, form input[type=submit], form input[type=button], a.button {
+    border: 0;
+    padding: 10px;
+    border-radius: 3px;
+    font-size: 1em;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,.26);
+    transition: all .3s;
+    min-width: 85px;
+}
+button, form input[type=submit], a.button {
+  color: rgba(255,255,255,0.87);
+  background-color: #1976d2;
+}
+button:hover, form input[type=submit]:hover, form input[type=button]:hover, a.button:hover {
+    box-shadow: 0 0 5px 0 rgba(0,0,0,.26);
+    cursor: pointer;
+    opacity: 0.8;
+    transition: all .3s;
+}
+a.button {
+  font-size: 1.2em;
+  text-decoration: none;
+}
+form {
+    max-width: 450px;
+    margin: 0 auto;
+    margin-top: 100px;
+}
+form .form-input input, form textarea {
+    width: 100%;
+    padding: .5rem 1rem;
+    font-size: 1.25rem;
+    line-height: 1.3;
+    border-radius: .3rem;
+    margin-top: .8rem;
+    border: 1px solid #ddd;
+    transition: all .3s;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+form .form-input input:focus {
+    border-color: #61ba9e;
+    outline: none;
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px #a5d8c7;
+    transition: all .3s;
+}
+form .form-controls {
+    margin-top: 20px;
+    text-align: center;;
+    width: 100%;
+}
+form .form-controls input[type=submit]{
+  margin-left: 30px;
+}
+
+
+/*******************************/
+/*******************************/
+/***** Login Page styles *******/
+/*******************************/
+/*******************************/
+div#maincontent.login {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: #1976D2;
+}
+div#maincontent.login #store-logo {
+  max-width: 200px;
+  margin: 2% auto;
+}
+div#maincontent.login #store-logo img{
+  width: 100%
+}
+div#maincontent.login form {
+    margin-top: 35px;
+    max-width: 330px;
+    position: relative;
+}
+div#maincontent.login form:before {
+    position: absolute;
+    content: "";
+    width: 78%;
+    border-bottom: 1px dashed #fff;
+    left: 11%;
+    top: -16px;
+}
+div#maincontent.login form .form-input input {
+  border-radius: 2px;
+  margin-top: 0.9rem;
+}
+div#maincontent.login form .form-controls input {
+  background-color: #fff;
+  transition: all .3s;
+  box-shadow: 0 2px 5px 0 rgba(0,0,0,.26);
+  color: #1E88E5;
+  width: 100px;
+  font-size: 1.2em;
+  margin-left: 0;
+}
+div#maincontent.login form .form-input input:focus{
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.3),0 0 3px rgba(0,0,0,0.7);
+  transition: all .3s;
+}
+div#maincontent.login form .form-controls input:hover {
+  box-shadow: 0 8px 8px rgba(0,0,0,0.24),0 0 8px rgba(0,0,0,0.12);
+  color: #1E88E5;
+  transition: all .3s;
+  opacity: 1;
+}
+
+/*******************************/
+/*******************************/
+/****** Nav Menu styles ********/
+/*******************************/
+/*******************************/
+div#menu {
+    float: right;
+    width: 20%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: #1976D2;
+}
+div#menu #store-logo img{
+  width: 80%;
+  margin: 3% auto;
+  margin-bottom: 50px;
+  display: block;
+}
+div#menu ul{
+  padding: 0;
+}
+div#menu ul li {
+    list-style: none;
+    color: #FFF;
+    padding: 0;
+  border: 0;
+}
+
+div#menu ul li.menuitem.user {
+    margin-bottom: 25px;
+    font-size: 20px;
+    color: #1976D2;
+    background: #fff;
+    padding: 10px;
+}
+div#menu ul li.menuitem:not(.user) a {
+    display: block;
+    width: 100%;
+    padding: 10px 17px;
+    box-sizing: border-box;
+    font-size: 18px;
+    background-color: transparent;
+    transition: all .3s;
+}
+div#menu ul li.menuitem:not(.user) a:link, div#menu ul li.menuitem:not(.user) a:active, div#menu ul li.menuitem:not(.user) a:visited {
+  color: #fff;
+  text-decoration: none;
+}
+div#menu ul li.menuitem.user .fa {
+  vertical-align: middle;
+}
+div#menu ul li.menuitem:not(.user) a .fa {
+  margin-right: 10px;
+  font-size: 1em;
+  transition: all .3s;
+}
+div#menu ul li.menuitem:not(.user) a:hover .fa {
+  font-size: 1.5em;
+  transition: all .3s;
+}
+div#menu ul li.menuitem:not(.user) a:hover {
+  background-color: #1E88E5;
+  transition: all .3s;
+}
+/*******************************/
+/*******************************/
+/**** #listAll View Styles *****/
+/*******************************/
+/*******************************/
+
 #maincontent .comic {
   width: 30%;
   max-width: 300px;
@@ -10,23 +208,17 @@
   width: 100%;
 }
 
-
-div#maincontent {
-    width: 80%;
-}
-
-
-div#menu {
-    float: right;
-}
-
-div#comicinfo .info img {
+/*******************************/
+/*******************************/
+/*** #showComic View Styles ****/
+/*******************************/
+/*******************************/
+#comicinfo .info img {
     max-width: 250px;
     min-width: 150px;
     float: left;
     margin: 0 15px 15px;
 }
-
 #comicinfo .comments {
     clear: both;
     margin: 20px;

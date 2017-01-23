@@ -8,7 +8,7 @@ lib.loadInitState = function(){
 };
 
 lib.showMenu = function(username){
-  var menuTemplate = '<div id="menu"><ul><li class="menuitem">username <a href="#logout">(salir)</a></li><li class="menuitem"><a href="#listAll">Listar comics</a></li><li class="menuitem"><a href="#addUser">Crear Usuario</a></li><li class="menuitem"><a href="#addComic">Crear comic</a></li></ul></div>';
+  var menuTemplate = '<div id="menu"><div id="store-logo"><img src="http://cdn2.comicsetc.com.au/skin/frontend/default/comics/images/logo-white-transparent-rotated.png" alt="comic-store-logo"/></div><ul><li class="menuitem user"> <i class="fa fa-user-circle-o fa-2x" aria-hidden="true"></i> username</li><li class="menuitem"><a href="#listAll"><i class="fa fa-list" aria-hidden="true"></i> Listar comics</a></li><li class="menuitem"><a href="#addUser"><i class="fa fa-user-plus" aria-hidden="true"></i> Crear usuario</a></li><li class="menuitem"><a href="#addComic"><i class="fa fa-plus" aria-hidden="true"></i> Crear comic</a></li><li class="menuitem"><a href="#logout"><i class="fa fa-user-times" aria-hidden="true"></i> Logout</a></li></ul></div>';
 
   var content = menuTemplate.replace('username', username);
   $( content ).insertBefore( $('#maincontent') );
@@ -43,7 +43,7 @@ lib.showComicInfo = function(comic){
   if(comic.comments){
     this.showComicComments(comic.comments);
   }
-  $('#maincontent').append('<a href="#listAll">Volver al listado</a>');
+  $('#maincontent').append('<a class="button" href="#listAll">Volver al listado</a>');
 
 };
 
@@ -73,19 +73,19 @@ lib.showSearchResult = function(inputVal){
 };
 
 lib.showLoginForm = function(){
-  var formTemplate = '<div id="loginform"><form><div class="form-input"><input name="username" type="text" placeholder="email"></div><div class="form-input"><input name="password" type="password" placeholder="constraseña"></div><input type="submit" value="Login"></form></div>';
+  var formTemplate = '<div id="loginform"><div id="store-logo"><img src="http://cdn2.comicsetc.com.au/skin/frontend/default/comics/images/logo-white-transparent-rotated.png" alt="comic-store-logo"/></div><form><div class="form-input"><input name="username" type="text" placeholder="email"></div><div class="form-input"><input name="password" type="password" placeholder="constraseña"></div><div class="form-controls"><input type="submit" value="Login"></div></form></div>';
 
-  $('#maincontent').append(formTemplate);
+  $('#maincontent').addClass('login').append(formTemplate);
 };
 
 lib.showNewUserForm = function(){
-  var formTemplate = '<div id="newuserform"><form><div class="form-input"><input name="userfirstname" type="text" placeholder="nombre" /></div><div class="form-input"><input name="userlastname" type="text" placeholder="apellidos" /></div><div class="form-input"><input name="email" type="email" placeholder="email" /></div><div class="form-input"><input name="password" type="password" placeholder="contraseña" /></div><input type="button" value="Cancelar" /><input type="submit" value="Crear"></form></div>';
+  var formTemplate = '<div id="newuserform"><form><div class="form-input"><input name="userfirstname" type="text" placeholder="nombre" /></div><div class="form-input"><input name="userlastname" type="text" placeholder="apellidos" /></div><div class="form-input"><input name="email" type="email" placeholder="email" /></div><div class="form-input"><input name="password" type="password" placeholder="contraseña" /></div><div class="form-controls"><input type="button" value="Cancelar" /><input type="submit" value="Crear"></div></form></div>';
 
   $('#maincontent').append(formTemplate);
 };
 
 lib.showNewComicForm = function(){
-  var formTemplate = '<div id="newcomicform"><form><div class="form-input"><input name="comicname" type="text" placeholder="nombre" /></div><div class="form-input"><input name="comichouse" type="text" placeholder="publicador" /></div><div class="form-input"><input name="comicyear" type="text" placeholder="año" /></div><div class="form-input"><input name="comiccoverimg" type="text" placeholder="cover url" /></div><div class="form-input"><textarea name="comicdescription"  placeholder="descripción"></textarea></div><input type="button" value="Cancelar" /><input type="submit" value="Crear"></form></div>';
+  var formTemplate = '<div id="newcomicform"><form><div class="form-input"><input name="comicname" type="text" placeholder="nombre" /></div><div class="form-input"><input name="comichouse" type="text" placeholder="publicador" /></div><div class="form-input"><input name="comicyear" type="text" placeholder="año" /></div><div class="form-input"><input name="comiccoverimg" type="text" placeholder="cover url" /></div><div class="form-input"><textarea name="comicdescription"  placeholder="descripción"></textarea></div><div class="form-controls"><input type="button" value="Cancelar" /><input type="submit" value="Crear"></div></form></div>';
 
   $('#maincontent').append(formTemplate);
 };
