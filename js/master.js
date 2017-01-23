@@ -23,7 +23,7 @@ $( document ).ready(function() {
         lib.listedComics = [];
         lib.showMenu(user.firstname + ' ' + user.lastname);
         lib.showSearchBar();
-        $( '<button type="button" name="button">Mostrar más</button>' ).insertAfter($( '#maincontent') );
+        $( '<button id="loadmore" type="button" name="button">Mostrar más</button>' ).insertAfter($( '#maincontent') );
         var currentComic = 3;
         var loadPase = 2;
         var comicsToShow = lib.comics.slice(0,currentComic);

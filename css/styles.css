@@ -6,9 +6,11 @@
 /*******************************/
 body{
   font-family: 'Roboto', sans-serif;
+  padding-bottom: 20px;
 }
 div#maincontent {
   width: 80%;
+  text-align: center;
 }
 button, form input[type=submit], form input[type=button], a.button {
     border: 0;
@@ -38,7 +40,7 @@ form {
     margin: 0 auto;
     margin-top: 100px;
 }
-form .form-input input, form textarea {
+form .form-input input, form textarea, #searchbar input {
     width: 100%;
     padding: .5rem 1rem;
     font-size: 1.25rem;
@@ -50,7 +52,7 @@ form .form-input input, form textarea {
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
 }
-form .form-input input:focus {
+form .form-input input:focus, #searchbar input:focus {
     border-color: #61ba9e;
     outline: none;
     box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px #a5d8c7;
@@ -196,16 +198,89 @@ div#menu ul li.menuitem:not(.user) a:hover {
 /*******************************/
 /*******************************/
 
+#maincontent #searchbar {
+  margin: 20px;
+  position: relative;
+}
+#maincontent #searchbar input {
+  padding-left: 47px;
+}
+#maincontent #searchbar label {
+    position: absolute;
+    left: 8px;
+    top: 18px;
+    color: #888;
+}
 #maincontent .comic {
-  width: 30%;
-  max-width: 300px;
-  display: inline-block;
-  vertical-align: top;
-  padding: 10px;
-  box-sizing: border-box;
+    width: 29%;
+    max-width: 300px;
+    display: inline-block;
+    vertical-align: top;
+    padding: 10px;
+    box-sizing: border-box;
+    background-color: #ECEFF1;
+    margin: 20px 15px;
+    border-radius: 3px;
+    position: relative;
+    padding-bottom: 30px;
 }
 #maincontent .comic .cover img{
   width: 100%;
+}
+#maincontent .comic div {
+  text-align: left;
+}
+#maincontent .comic .cover {
+    margin-bottom: 8px;
+}
+#maincontent .comic .cover a img {
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,.26);
+    transition: all .3s;
+}
+#maincontent .comic .cover a:hover img {
+    box-shadow: 0 5px 5px 0 rgba(0,0,0,.66);
+    width: 101%;
+    margin-left: -0.5%;
+    transition: all .3s;
+}
+#maincontent .comic .name {
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 20px;
+    color: #1976D2;
+    box-sizing: border-box;
+    padding: 5px;
+}
+#maincontent .comic .house_year {
+    font-size: 16px;
+    font-weight: normal;
+    line-height: 20px;
+    padding: 0px 5px;
+    color: #546E7A;
+}
+#maincontent .comic div.moreinfo {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    width: 70px;
+    background-color: #0f9d58;
+    transition: all .3s;
+}
+#maincontent .comic div.moreinfo:hover {
+  opacity: 0.8;
+  transition: all .3s;
+}
+#maincontent .comic div.moreinfo a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    display: block;
+    padding: 6px 5px;
+    text-align: center;
+}
+#loadmore {
+  margin-left: 25px;
+  margin-top: 10px;
 }
 
 /*******************************/
@@ -213,13 +288,64 @@ div#menu ul li.menuitem:not(.user) a:hover {
 /*** #showComic View Styles ****/
 /*******************************/
 /*******************************/
+#maincontent div#comicinfo {
+    background-color: #ECEFF1;
+    box-sizing: border-box;
+    padding: 30px 10px;
+    max-width: 800px;
+    margin: 40px auto;
+    text-align: left;
+    border-radius: 2px;
+    padding-right: 25px;
+}
+#maincontent div#comicinfo div {
+    margin: 20px 15px;
+    font-size: 1.05em;
+    color: #546E7A;
+}
+#maincontent div#comicinfo div strong {
+    font-size: 1.1em;
+    color: #1976D2;
+}
+
 #comicinfo .info img {
     max-width: 250px;
     min-width: 150px;
     float: left;
-    margin: 0 15px 15px;
+    margin: -7px 25px 20px 13px;
+    box-shadow: 0 3px 6px 0 rgba(0,0,0,.26);
 }
-#comicinfo .comments {
+#maincontent div#comicinfo div.comments {
     clear: both;
     margin: 20px;
+    font-size: 0.95em;
+    padding-top: 10px;
+}
+#maincontent div#comicinfo div.comments .singlecomment {
+    position: relative;
+    padding-top: 23px;
+}
+#maincontent div#comicinfo div.singlecomment .user {
+    font-size: 0.8em;
+    margin: 0;
+    padding: 4px 8px;
+    border-radius: 5px 5px 0 0;
+    color: #FFF;
+    background-color: #263238;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+#maincontent div#comicinfo div.singlecomment:nth-of-type(2n) .user {
+  right: 0;
+  left: auto;
+}
+#maincontent div#comicinfo div.singlecomment .commentcontent {
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 0 5px 5px 5px;
+    margin: 0 0 20px 0;
+}
+#maincontent div#comicinfo div.singlecomment:nth-of-type(2n) .commentcontent {
+  border-radius: 5px 0 5px 5px;
 }

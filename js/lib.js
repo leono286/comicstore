@@ -15,13 +15,13 @@ lib.showMenu = function(username){
 };
 
 lib.showSearchBar = function(){
-  var searchTemplate = '<div id="searchbar"><input type="text" placeholder="Buscar..."></div>'
+  var searchTemplate = '<div id="searchbar"><label for="search-input"><i class="fa fa-search fa-2x" aria-hidden="true"></i><span class="sr-only">Search icons</span></label><input id="search-input" type="text" placeholder="Busca por título, año o publicador"></div>'
 
   $('#maincontent').prepend(searchTemplate);
 };
 
 lib.showComics = function(comicsArr){
-  var comicTemplate = '<div class="comic"><div class="cover"><a href="#showComic-comicId-"><img src="imgurl" alt="comic cover"></a></div><div class="name">comicname</div><div class="year">comicyear</div><div class="house">comichouse</div><div class="moreinfo"><a href="#showComic-comicId-">more...</a></div></div>';
+  var comicTemplate = '<div class="comic"><div class="cover"><a href="#showComic-comicId-"><img src="imgurl" alt="comic cover"></a></div><div class="name">comicname</div><div class="house_year">comichouse - comicyear</div><div class="moreinfo"><a href="#showComic-comicId-"><i class="fa fa-plus" aria-hidden="true"></i> info</a></div></div>';
   comicsArr.forEach( function(comic){
     var content = comicTemplate.replace('imgurl',comic.imgurl);
     content = content.replace('comicname', comic.name);
@@ -33,7 +33,7 @@ lib.showComics = function(comicsArr){
 };
 
 lib.showComicInfo = function(comic){
-  var singleComicTemplate = '<div id="comicinfo"><div class="info"><img src="imageurl" alt="comic_cover_image"><div class="title"><strong>Título:</strong> comicname</div><div class="house"><strong>Publicador:</strong> comichouse</div><div class="year"><strong>Año:</strong> comicyear</div><div class="description">comicdescription</div></div><div class="comments"></div></div>';
+  var singleComicTemplate = '<div id="comicinfo"><div class="info"><img src="imageurl" alt="comic_cover_image"><div class="title"><strong>Título:</strong> comicname</div><div class="house"><strong>Publicador:</strong> comichouse</div><div class="year"><strong>Año:</strong> comicyear</div><div class="description"><strong>Descripción:</strong><br/>comicdescription</div></div><div class="comments"><strong>Comentarios:</strong></div></div>';
   var content = singleComicTemplate.replace('imageurl', comic.imgurl);
   content = content.replace('comicname', comic.name);
   content = content.replace('comicyear', comic.year);
@@ -42,6 +42,8 @@ lib.showComicInfo = function(comic){
   $('#maincontent').append(content);
   if(comic.comments){
     this.showComicComments(comic.comments);
+  } else {
+      $('#comicinfo .comments').append('<p>No hay comentarios disponibles para este comic.</p>')
   }
   $('#maincontent').append('<a class="button" href="#listAll">Volver al listado</a>');
 
