@@ -7,6 +7,8 @@
 body{
   font-family: 'Roboto', sans-serif;
   padding-bottom: 20px;
+}
+body.login{
   background-color: #1976D2;
 }
 div#maincontent {
@@ -95,6 +97,10 @@ form .form-controls input[type=submit]{
   }
   div#maincontent {
       width: 100%;
+  }
+  form {
+    margin-top: 45px;
+    width: 95%;
   }
 }
 
@@ -355,6 +361,7 @@ div#menu ul li.menuitem:not(.user) a:hover {
     left: auto;
     right: auto;
     bottom: auto;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,.26);
   }
   div#menu #store-logo {
     display: block;

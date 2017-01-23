@@ -81,7 +81,8 @@ lib.showSearchResult = function(inputVal){
 lib.showLoginForm = function(){
   var formTemplate = '<div id="loginform"><div id="store-logo"><img src="http://cdn2.comicsetc.com.au/skin/frontend/default/comics/images/logo-white-transparent-rotated.png" alt="comic-store-logo"/></div><form><div class="form-input"><input name="username" type="text" placeholder="email"></div><div class="form-input"><input name="password" type="password" placeholder="constraseña"></div><div class="form-controls"><input type="submit" value="Login"></div></form></div>';
 
-  $('#maincontent').addClass('login').append(formTemplate);
+  $('#maincontent').append(formTemplate);
+  $('body, #maincontent').addClass('login');
 };
 
 lib.showNewUserForm = function(){
