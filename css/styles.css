@@ -83,6 +83,14 @@ form .form-controls input[type=submit]{
     line-height: 20px;
     color: #1976D2;
 }
+#maincontent .messagewarning {
+    font-size: 0.8em;
+    text-align: left;
+    color: red;
+    padding-top: 4px;
+    width: 98%;
+    margin: 0 auto;
+}
 
 @media (max-width: 1023px) {
   div#maincontent {
