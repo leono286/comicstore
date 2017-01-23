@@ -251,15 +251,15 @@ var init_state = {
       {
         id: 1,
         firstname: 'Leonardo',
-        lastname: 'Perez',
-        password: 'leo',
+        lastname: 'Pérez',
+        password: 'L1234567!',
         email: 'leono286@gmail.com'
       },
       {
         id: 2,
         firstname: 'John',
         lastname: 'Doe',
-        password: 'seconduser',
+        password: 'J1234567!',
         email: 'johndoe@gmail.com'
       }
     ]
