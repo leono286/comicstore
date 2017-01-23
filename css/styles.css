@@ -19,3 +19,15 @@ div#maincontent {
 div#menu {
     float: right;
 }
+
+div#comicinfo .info img {
+    max-width: 250px;
+    min-width: 150px;
+    float: left;
+    margin: 0 15px 15px;
+}
+
+#comicinfo .comments {
+    clear: both;
+    margin: 20px;
+}

@@ -18,8 +18,8 @@ $( document ).ready(function() {
 
     lib.validateHash(requestedview);
 
-    switch (requestedview) {
-      case '#listAll':
+    switch (true) {
+      case /^#listAll$/.test(requestedview):
         lib.listedComics = [];
         lib.showMenu(user.firstname + ' ' + user.lastname);
         lib.showSearchBar();
@@ -51,13 +51,13 @@ $( document ).ready(function() {
         });
         break;
 
-      case '#logout':
+      case /^#logout$/.test(requestedview):
         localStorage.setItem('currentUser', '');
         window.location.href = window.location.href.substring(0, window.location.href.indexOf('#'));
         window.location.reload();
         break;
 
-      case '#addUser':
+      case /^#addUser$/.test(requestedview):
         lib.showMenu(user.firstname + ' ' + user.lastname);
         lib.showNewUserForm();
         $( '#newuserform input[type=button]' ).click(function(){
@@ -76,7 +76,7 @@ $( document ).ready(function() {
         });
         break;
 
-      case '#addComic':
+      case /^#addComic$/.test(requestedview):
         lib.showMenu(user.firstname + ' ' + user.lastname);
         lib.showNewComicForm();
         $( '#newcomicform input[type=button]' ).click(function(){
@@ -95,6 +95,16 @@ $( document ).ready(function() {
           lib.addComic(newComic);
         });
         break;
+
+      case /^#showComic[1-9][0-9]*$/.test(requestedview):
+        lib.showMenu(user.firstname + ' ' + user.lastname);
+        var comicId = requestedview.split('#showComic')[1];
+        var comicToShow = lib.comics.filter(function( comic ) {
+          return comic.id == comicId;
+        })[0];
+        lib.showComicInfo(comicToShow);
+        break;
+
       default:
         lib.showMenu(user.firstname + ' ' + user.lastname);
         console.log('en otra vista');

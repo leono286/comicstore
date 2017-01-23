@@ -21,14 +21,41 @@ lib.showSearchBar = function(){
 };
 
 lib.showComics = function(comicsArr){
-  var comicTemplate = '<div class="comic"><div class="cover"><img src="imgurl" alt="comic cover"></div><div class="name">comicname</div><div class="year">comicyear</div><div class="moreinfo">more...</div></div>';
-  comicsArr.forEach(function(comic){
+  var comicTemplate = '<div class="comic"><div class="cover"><a href="#showComic-comicId-"><img src="imgurl" alt="comic cover"></a></div><div class="name">comicname</div><div class="year">comicyear</div><div class="house">comichouse</div><div class="moreinfo"><a href="#showComic-comicId-">more...</a></div></div>';
+  comicsArr.forEach( function(comic){
     var content = comicTemplate.replace('imgurl',comic.imgurl);
     content = content.replace('comicname', comic.name);
+    content = content.replace('comichouse', comic.house);
     content = content.replace('comicyear', comic.year);
+    content = content.replace(/-comicId-/g, comic.id);
     $('#maincontent').append(content);
   })
 };
+
+lib.showComicInfo = function(comic){
+  var singleComicTemplate = '<div id="comicinfo"><div class="info"><img src="imageurl" alt="comic_cover_image"><div class="title"><strong>Título:</strong> comicname</div><div class="house"><strong>Publicador:</strong> comichouse</div><div class="year"><strong>Año:</strong> comicyear</div><div class="description">comicdescription</div></div><div class="comments"></div></div>';
+  var content = singleComicTemplate.replace('imageurl', comic.imgurl);
+  content = content.replace('comicname', comic.name);
+  content = content.replace('comicyear', comic.year);
+  content = content.replace('comichouse', comic.house);
+  content = content.replace('comicdescription', comic.description);
+  $('#maincontent').append(content);
+  if(comic.comments){
+    this.showComicComments(comic.comments);
+  }
+  $('#maincontent').append('<a href="#listAll">Volver al listado</a>');
+
+};
+
+lib.showComicComments = function(commentsArr){
+  var commentsTemplate = '<div class="singlecomment"><div class="user">commentuser</div><div class="commentcontent">commenttext</div></div>';
+  commentsArr.forEach( function(comment){
+    var content = commentsTemplate.replace('commentuser', comment.user);
+    content = content.replace('commenttext', comment.comment);
+    $('#comicinfo .comments').append(content);
+  });
+};
+
 
 lib.showSearchResult = function(inputVal){
   var searchFields = ["name","house","year"];
@@ -72,7 +99,7 @@ lib.validateUser = function(useremail){
 
 lib.validateHash = function(hash){
   allowedViews = ['#logout', '#listAll', '#addUser', '#addComic'];
-  var allowed = allowedViews.indexOf(hash) >= 0;
+  var allowed = (allowedViews.indexOf(hash) >= 0 || hash.match(/#showComic[1-9][0-9]*$/) != null);
   if (!allowed){
       window.location.hash = '#listAll';
       window.location.reload();
