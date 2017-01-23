@@ -8,10 +8,14 @@ lib.loadInitState = function(){
 };
 
 lib.showMenu = function(username){
-  var menuTemplate = '<div id="menu"><div id="store-logo"><img src="http://cdn2.comicsetc.com.au/skin/frontend/default/comics/images/logo-white-transparent-rotated.png" alt="comic-store-logo"/></div><ul><li class="menuitem user"> <i class="fa fa-user-circle-o fa-2x" aria-hidden="true"></i> username</li><li class="menuitem"><a href="#listAll"><i class="fa fa-list" aria-hidden="true"></i> Listar comics</a></li><li class="menuitem"><a href="#addUser"><i class="fa fa-user-plus" aria-hidden="true"></i> Crear usuario</a></li><li class="menuitem"><a href="#addComic"><i class="fa fa-plus" aria-hidden="true"></i> Crear comic</a></li><li class="menuitem"><a href="#logout"><i class="fa fa-user-times" aria-hidden="true"></i> Logout</a></li></ul></div>';
+  var menuTemplate = '<div id="menu"><div id="store-logo"><img src="http://cdn2.comicsetc.com.au/skin/frontend/default/comics/images/logo-white-transparent-rotated.png" alt="comic-store-logo"/></div><ul><li class="menuitem user"> <i class="fa fa-user-circle-o fa-2x" aria-hidden="true"></i> username <div class="mobile_menu_wrapper"><span class="mobile_menu"></span></div></li><li class="menuitem"><a href="#listAll"><i class="fa fa-list" aria-hidden="true"></i> Listar comics</a></li><li class="menuitem"><a href="#addUser"><i class="fa fa-user-plus" aria-hidden="true"></i> Crear usuario</a></li><li class="menuitem"><a href="#addComic"><i class="fa fa-plus" aria-hidden="true"></i> Crear comic</a></li><li class="menuitem"><a href="#logout"><i class="fa fa-user-times" aria-hidden="true"></i> Logout</a></li></ul></div>';
 
   var content = menuTemplate.replace('username', username);
   $( content ).insertBefore( $('#maincontent') );
+  $('.mobile_menu_wrapper').click(function(){
+    $(this).closest('ul').toggleClass('active');
+    $('div#menu ul li.menuitem:not(.user)').slideToggle();
+  });
 };
 
 lib.showSearchBar = function(){

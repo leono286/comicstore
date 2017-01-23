@@ -81,6 +81,22 @@ form .form-controls input[type=submit]{
     color: #1976D2;
 }
 
+@media (max-width: 1023px) {
+  div#maincontent {
+      width: 72%;
+  }
+}
+@media (max-width: 767px) {
+  body {
+    font-family: 'Roboto', sans-serif;
+    padding-bottom: 20px;
+    margin: 0;
+  }
+  div#maincontent {
+      width: 100%;
+  }
+}
+
 /*******************************/
 /*******************************/
 /***** Login Page styles *******/
@@ -176,6 +192,9 @@ div#menu ul li.menuitem.user {
     background: #fff;
     padding: 10px;
 }
+div#menu ul li.menuitem.user div.mobile_menu_wrapper{
+  display: none;
+}
 div#menu ul li.menuitem:not(.user) a {
     display: block;
     width: 100%;
@@ -204,6 +223,134 @@ div#menu ul li.menuitem:not(.user) a:hover .fa {
 div#menu ul li.menuitem:not(.user) a:hover {
   background-color: #1E88E5;
   transition: all .3s;
+}
+@media (max-width: 1023px) {
+  div#menu {
+    width: 28%;
+  }
+}
+@media (max-width: 767px) {
+  div#menu {
+      position: relative;
+      float: none;
+      width: 100%;
+  }
+  div#menu #store-logo {
+    display: inline-block;
+  }
+  div#menu #store-logo img {
+      max-width: 75px;
+      margin: 10px;
+      margin-top: 15px;
+  }
+  div#menu ul {
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    top: 16px;
+    right: 15px;
+    z-index: 999;
+    background-color: #1976D2;
+  }
+  div#menu ul.active {
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,.26);
+  }
+  div#menu ul li.menuitem:not(.user){
+    display: none;
+  }
+  div#menu ul li.menuitem.user + li.menuitem{
+      margin-top: 16px;
+  }
+  div#menu ul li.menuitem.user {
+    margin-bottom: 0px;
+    padding: 8px 10px;
+    position: relative;
+    padding-right: 70px;
+  }
+  div#menu ul li.menuitem.user div.mobile_menu_wrapper {
+    position: absolute;
+    background-color: #1976D2;
+    top: 2px;
+    right: 2px;
+    bottom: 2px;
+    display: block;
+    border: 1px solid #fff;
+    padding: 0 3px 0 8px;
+    width: 38px;
+  }
+  div#menu ul li.menuitem.user div.mobile_menu_wrapper:hover {
+    cursor: pointer;
+  }
+  div#menu ul li.menuitem.user span.mobile_menu {
+    color: #FFF;
+    padding: 5px;
+    top: 15px;
+    right: 3px;
+    width: 24px;
+    height: 9px;
+    margin-right: 5px;
+    border-bottom: 3px solid #FFF;
+    transition: border-bottom 0.5s;
+    position: absolute;
+  }
+  div#menu ul.active li.menuitem.user span.mobile_menu {
+    border: 0;
+  }
+  div#menu ul li.menuitem.user span.mobile_menu:before {
+    content: "";
+    position: absolute;
+    top: -3px;
+    left: 0px;
+    width: 100%;
+    border-top: 3px solid #FFF;
+    transform: rotate(0) translateY(0) translateX(0px);
+    transition: all 0.5s;
+  }
+  div#menu ul.active li.menuitem.user span.mobile_menu:before {
+    content: "";
+    position: absolute;
+    top: -3px;
+    left: 0;
+    width: 100%;
+    transform: rotate(-45deg) translateY(9px) translateX(-8px);
+    transition: all 0.5s;
+}
+  div#menu ul li.menuitem.user span.mobile_menu:after {
+    content: "";
+    position: absolute;
+    top: 8px;
+    left: 0px;
+    width: 100%;
+    border-top: 3px solid #FFF;
+    transform: rotate(0) translateY(0px) translateX(0px);
+    transition: all 0.5s;
+  }
+  div#menu ul.active li.menuitem.user span.mobile_menu:after {
+    content: "";
+    position: absolute;
+    top: 8px;
+    left: 0;
+    width: 100%;
+    transform: rotate(45deg) translateY(0px) translateX(1px);
+    transition: all 0.5s;
+  }
+}
+@media (max-width: 480px) {
+  div#menu ul {
+    position: relative;
+    top: auto;
+    left: auto;
+    right: auto;
+    bottom: auto;
+  }
+  div#menu #store-logo {
+    display: block;
+    text-align: center;
+  }
+  div#menu #store-logo img {
+    margin: 0 auto;
+    padding: 10px;
+  }
 }
 /*******************************/
 /*******************************/
@@ -295,7 +442,17 @@ div#menu ul li.menuitem:not(.user) a:hover {
   margin-left: 25px;
   margin-top: 10px;
 }
-
+@media (max-width: 1024px) {
+  #maincontent .comic {
+    width: 43%;
+    padding-bottom: 9%;
+  }
+}
+@media (max-width: 480px){
+#maincontent .comic {
+    width: 90%;
+  }
+}
 /*******************************/
 /*******************************/
 /*** #showComic View Styles ****/
@@ -361,4 +518,25 @@ div#menu ul li.menuitem:not(.user) a:hover {
 }
 #maincontent div#comicinfo div.singlecomment:nth-of-type(2n) .commentcontent {
   border-radius: 5px 0 5px 5px;
+}
+@media (max-width: 1023px) {
+  #maincontent div#comicinfo {
+    margin-top: 2%;
+    padding: 10px;
+  }
+  #comicinfo .info img {
+    margin: -7px 21px 15px;
+  }
+}
+@media (max-width: 480px){
+  #comicinfo .info img {
+      margin: 0 auto 10px;
+      float: none;
+      display: block;
+      max-width: 300px;
+  }
+  #maincontent div#comicinfo {
+    margin-top: 0;
+    padding: 10px;
+  }
 }
